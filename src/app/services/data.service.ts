@@ -12,7 +12,7 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class DataService {
   //selectrecurso:RootObject;
-  urlrecursos = 'https://recursosinformaticos.herokuapp.com/api/recursos'
+  urlrecursos = 'https://unorecursos-backend.herokuapp.com/api/recursos'
   recursos: any
   recursos2: RootObject[]
   constructor(private http: HttpClient) {}

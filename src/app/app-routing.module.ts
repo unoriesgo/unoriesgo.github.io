@@ -23,7 +23,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   // { path: '', redirectTo: '/heroes', pathMatch: 'full' },
   // { path: '**', component: PageNotFoundComponent }
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/recursos', pathMatch: 'full' },
   {
     path: 'recurso/:id',
     component: RecursodataComponent,

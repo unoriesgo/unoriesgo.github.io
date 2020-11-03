@@ -1,0 +1,31 @@
+<h1>
+    <span>{{num}}</span> Recursos para Informaticos </h1>
+
+<hr>
+<input type="checkbox" id="check">
+<label for="check" *ngIf="loading==true">
+      <div class="check-icon">
+</div>
+</label>
+
+<div class="row row-cols-1 row-cols-md-3" *ngIf="loading==false">
+    <div class="col mb-4" *ngFor="let data of recursos let i=index">
+        <div class="card h-100">
+            <img src="{{data.imagen}}" class="card-img-top" alt="img" height="200px">
+            <div class="card-body">
+                <h5 class="card-title">{{data.nombre}}</h5>
+                <p class="card-text">{{data.descripcion.substring(0,80)}}.....</p>
+                <button type="button" class="btn btn-primary btn-block" (click)="abrirdata(i)"> Ver Mas</button>
+                <hr>
+                <div *ngFor="let etiueta of data.etiquetas " class="contentag">
+                    <a class="tag" *ngIf="etiueta!==''" [routerLink]="['/tag',etiueta]">
+                    {{etiueta}} 
+                </a>
+                </div>
+                <!-- <p class="card-text">02/10/2020</p> -->
+            </div>
+        </div>
+
+    </div>
+
+</div>

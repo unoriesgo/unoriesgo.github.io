@@ -1,0 +1,60 @@
+<div class="container register" *ngIf="loading==true">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+            <h3>Bienvenido</h3>
+            <p>Gracias por hacer que el conocimiento sea libre!</p>
+        </div>
+        <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Editar un Recurso</h3>
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="formnombre">Ingrese Nombre del Recurso*</label>
+                                <input id="formnombre" type="text" class="form-control" placeholder="Ingrese Nombre *" value="" [(ngModel)]="data.nombre" />
+                            </div>
+                            <div class="form-group">
+                                <label for="formimagen">Ingrese Url de Imagen del Recurso*</label>
+                                <input type="text" id="formimagen" class="form-control" placeholder="Ingrese url de una Imagen *" value="" [(ngModel)]="data.imagen" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Ingrese descripcion del Recurso*</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="data.descripcion"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="formetiqueta">Ingrese *</label>
+                                <input type="text" id="formetiqueta" class="form-control" placeholder="Etiqueta 1" value="" [(ngModel)]="data.etiquetas[0]" />
+                                <input type="text" id="formetiqueta" class="form-control" placeholder="Etiqueta 2 *" value="" [(ngModel)]="data.etiquetas[1]" />
+                                <input type="text" id="formetiqueta" class="form-control" placeholder="Rtiqueta 3 *" value="" [(ngModel)]="data.etiquetas[2]" />
+                                <input type="text" id="formetiqueta" class="form-control" placeholder="Etiqueta 4 *" value="" [(ngModel)]="data.etiquetas[3]" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="form-group ">
+                                <label for="formtelegramlink ">Link del recurso en TELEGRAM</label>
+                                <input type="url " id="formtelegramlink " class="form-control " placeholder="Link Telegram * " value=" " [(ngModel)]="data.links[0].url " />
+                            </div>
+                            <div class="form-group ">
+                                <label for="formtelegramlink ">Link del recurso en MEGA</label>
+                                <input type="url " id="formtelegramlink " class="form-control " placeholder="Link Telegram * " value=" " [(ngModel)]="data.links[1].url " />
+                            </div>
+                            <div class="form-group ">
+                                <label for="formtelegramlink ">Link del recurso en GOOGLE DRIVE</label>
+                                <input type="url " id="formtelegramlink " class="form-control " placeholder="Link Telegram * " value=" " [(ngModel)]="data.links[2].url " />
+                            </div>
+                            <div class="form-group ">
+                                <label for="formtelegramlink ">Link del recurso en MEDIAFIRE</label>
+                                <input type="text " id="formtelegramlink " class="form-control " placeholder="Link Telegram * " value=" " [(ngModel)]="data.links[3].url " />
+                            </div>
+                            <button type="submit " class="btnRegister " value="Actualizar " (click)="updaterecurso() ">Editar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

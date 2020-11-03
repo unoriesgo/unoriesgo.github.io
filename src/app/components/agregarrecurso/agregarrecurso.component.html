@@ -1,0 +1,141 @@
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+
+            <h3>Bienvenido</h3>
+            <p>Gracias por hacer que el conocimiento sea libre!</p>
+            <!-- <input type="submit" name="" value="Login"/><br/> -->
+        </div>
+        <div class="col-md-9 register-right">
+            <!-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
+                </li>
+            </ul> -->
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Agregar un Recurso</h3>
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="formnombre">Ingrese Nombre del Recurso*</label>
+                                <input id="formnombre" type="text" class="form-control" placeholder="Ingrese Nombre *" value="" [(ngModel)]="data.nombre" />
+                            </div>
+                            <div class="form-group">
+                                <label for="formimagen">Ingrese Url de Imagen del Recurso*</label>
+                                <input type="text" id="formimagen" class="form-control" placeholder="Ingrese url de una Imagen *" value="" [(ngModel)]="data.imagen" />
+                            </div>
+                            <!-- <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password *" value="" />
+                            </div> -->
+                            <!-- <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                            </div> -->
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Ingrese descripcion del Recurso*</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="data.descripcion"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="formetiqueta">Ingrese *</label>
+                                <input type="text" id="formetiqueta" class="form-control" placeholder="Etiqueta 1" value="" [(ngModel)]="data.etiquetas[0]" />
+                                <input type="text" id="formetiqueta" class="form-control" placeholder="Etiqueta 2 *" value="" [(ngModel)]="data.etiquetas[1]" />
+                                <input type="text" id="formetiqueta" class="form-control" placeholder="Rtiqueta 3 *" value="" [(ngModel)]="data.etiquetas[2]" />
+                                <input type="text" id="formetiqueta" class="form-control" placeholder="Etiqueta 4 *" value="" [(ngModel)]="data.etiquetas[3]" />
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="formimagen">Ingrese 2*</label>
+                              
+                            </div> -->
+                            <!--    <div class=" form-check form-check-inline">
+                                <input class="form-check-input " type="checkbox " id="inlineCheckbox1 " value="Curso ">
+                                <label class="form-check-label " for="inlineCheckbox1 " [(ngModel)]="data.etiquetas[0] ">Curso</label>
+                            </div>
+                            <div class="form-check form-check-inline ">
+                                <input class="form-check-input " type="checkbox " id="inlineCheckbox2 " value="PDF ">
+                                <label class="form-check-label " for="inlineCheckbox2 " [(ngModel)]="data.etiquetas[1] ">PDF</label>
+                            </div> -->
+                            <!-- <div class="form-group ">
+                                <div class="maxl ">
+                                    <label class="radio inline "> 
+                                                    <input type="radio " name="gender " value="male " checked>
+                                                    <span> Male </span> 
+                                                </label>
+                                    <label class="radio inline "> 
+                                                    <input type="radio " name="gender " value="female ">
+                                                    <span>Female </span> 
+                                                </label>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="form-group ">
+                                <label for="formtelegramlink ">Link del recurso en TELEGRAM</label>
+                                <input type="url " id="formtelegramlink " class="form-control " placeholder="Link Telegram * " value=" " [(ngModel)]="data.links[0].url " />
+                            </div>
+                            <div class="form-group ">
+                                <label for="formtelegramlink ">Link del recurso en MEGA</label>
+                                <input type="url " id="formtelegramlink " class="form-control " placeholder="Link Telegram * " value=" " [(ngModel)]="data.links[1].url " />
+                            </div>
+                            <div class="form-group ">
+                                <label for="formtelegramlink ">Link del recurso en GOOGLE DRIVE</label>
+                                <input type="url " id="formtelegramlink " class="form-control " placeholder="Link Telegram * " value=" " [(ngModel)]="data.links[2].url " />
+                            </div>
+                            <div class="form-group ">
+                                <label for="formtelegramlink ">Link del recurso en MEDIAFIRE</label>
+                                <input type="text " id="formtelegramlink " class="form-control " placeholder="Link Telegram * " value=" " [(ngModel)]="data.links[3].url " />
+                            </div>
+                            <img src="{{data.imagen}}" alt="" height="100px" width="300px" />
+                            <button type="submit " class="btnRegister " value="Agregar " (click)="addrecurso() ">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="tab-pane fade show " id="profile " role="tabpanel " aria-labelledby="profile-tab ">
+                                <h3  class="register-heading ">Apply as a Hirer</h3>
+                                <div class="row register-form ">
+                                    <div class="col-md-6 ">
+                                        <div class="form-group ">
+                                            <input type="text " class="form-control " placeholder="First Name * " value=" " />
+                                        </div>
+                                        <div class="form-group ">
+                                            <input type="text " class="form-control " placeholder="Last Name * " value=" " />
+                                        </div>
+                                        <div class="form-group ">
+                                            <input type="email " class="form-control " placeholder="Email * " value=" " />
+                                        </div>
+                                        <div class="form-group ">
+                                            <input type="text " maxlength="10 " minlength="10 " class="form-control " placeholder="Phone * " value=" " />
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <div class="form-group ">
+                                            <input type="password " class="form-control " placeholder="Password * " value=" " />
+                                        </div>
+                                        <div class="form-group ">
+                                            <input type="password " class="form-control " placeholder="Confirm Password * " value=" " />
+                                        </div>
+                                        <div class="form-group ">
+                                            <select class="form-control ">
+                                                <option class="hidden "  selected disabled>Please select your Sequrity Question</option>
+                                                <option>What is your Birthdate?</option>
+                                                <option>What is Your old Phone Number</option>
+                                                <option>What is your Pet Name?</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group ">
+                                            <input type="text " class="form-control " placeholder="`Answer * " value=" " />
+                                        </div>
+                                        <input type="submit " class="btnRegister "  value="Register "/>
+                                    </div>
+                                </div>
+                            </div> -->
+            </div>
+        </div>
+    </div>
+
+</div>

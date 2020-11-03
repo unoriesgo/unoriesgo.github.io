@@ -1,0 +1,61 @@
+<div class="wrap">
+
+    <!-- <aside class="sidebar">
+        <div class="widget">
+            <h2>Michael</h2>
+            <p>Hello, my name’s Michael. I’m 20 years old. I live in São Paulo (Brazil). I work as a Web Designer.<br> maycoualmeida@gmail.com</p>
+        </div>
+        <div class="widget">
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </aside> -->
+    <input type="checkbox" id="check">
+    <label for="check" *ngIf="loading==true">
+      <div class="check-icon">
+</div>
+</label>
+
+    <div class="blog" *ngIf="loading==false">
+        <div class="conteudo">
+            <div class="post-info" *ngFor="let etiueta of recurso.etiquetas let i=index">
+                <a class="tag" *ngIf="etiueta!==''" [routerLink]="['/tag',etiueta]">
+                    {{etiueta}} 
+                </a>
+            </div>
+
+            <img src="{{recurso.imagen}}">
+
+            <h1> {{recurso.nombre}} </h1>
+            <hr>
+            <p>
+                {{recurso.descripcion}} </p>
+
+            <h3>Descargar</h3>
+
+
+            <div *ngFor="let url of recurso.links">
+                <a *ngIf='url.url!== "" ' href="{{url.url}}" target="_blank"><img src="../assets/{{url.Plataforma}}.svg" alt="HTML tutorial" style="width:42px;height:42px;"> </a>
+            </div>
+        </div>
+
+    </div>
+
+    <ng-container>
+
+        <aside *ngIf="loading==false">
+            <div *ngIf="authService.loggedIn(); ">
+
+                <button class="btn btn-outline-success btn-block" (click)="edit()">Editar Recurso</button>
+                <br>
+                <br>
+                <button class="btn btn-danger btn-block" (click)="delete()">Eliminar Recurso</button>
+
+            </div>
+
+
+
+        </aside>
+    </ng-container>
+
+</div>

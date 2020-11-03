@@ -1,0 +1,33 @@
+<h1>
+    Resultados de busquedad para: <span>{{valor}}</span></h1>
+<hr>
+<input type="checkbox" id="check">
+<label for="check" *ngIf="loading==true">
+      <div class="check-icon">
+</div>
+</label>
+
+<div class="card-columns" *ngFor="let data of recursos let i=index">
+    <div class="card" *ngIf="data.nombre.toLowerCase().indexOf(valor.toLowerCase()) >=0; else loggedIn">
+        <img src="{{data.imagen}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{data.nombre}}</h5>
+            <p class="card-text">{{data.descripcion}}</p>
+            <button type="button" class="btn btn-primary btn-block" (click)="abrirdata(i)"> Abrir</button>
+            <hr>
+            <div *ngFor="let etiueta of data.etiquetas " class="contentag">
+                <a class="tag" *ngIf="etiueta!==''" [routerLink]="['/tag',etiueta]">
+                    {{etiueta}} 
+                </a>
+            </div>
+            <!-- <p class="card-text">02/10/2020</p> -->
+        </div>
+    </div>
+    <ng-template #loggedIn>
+        <div class="alert alert-primary" role="alert" *ngIf="data.nombre.toLowerCase().indexOf(valor.toLowerCase()) >-1">
+            hhhahhahahah
+        </div>
+    </ng-template>
+
+
+</div>

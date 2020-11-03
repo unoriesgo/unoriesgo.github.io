@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.jumbotron {
+    padding: 10px;
+}
+
+.btn {
+    padding: 10px;
+    margin-left: 13px;
+    margin-top: 9px;
+    margin-right: 20px;
+    //   width: 44px;
+    //  height: 44px;
+    // padding: 60px;
+    border-radius: 35px;
+}
+
+.btn-fb {
+    background-color: #1976D2;
+}
+
+.btn-tg {
+    background-color: #41B4E6;
+}
+
+.btn-discord {
+    background-color: #A8ADF0;
+}
+
+html,
+label {
+    position: relative;
+    height: 125px;
+    width: 125px;
+    display: inline-block;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border-left-color: #5cb85c;
+    animation: rotate 1.2s linear infinite;
+}
+
+@keyframes rotate {
+    50% {
+        border-left-color: #9b59b6;
+    }
+    75% {
+        border-left-color: #e67e22;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+label .check-icon {
+    display: none;
+}
+
+label .check-icon:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 28px;
+    transform: scaleX(-1) rotate(135deg);
+    height: 56px;
+    width: 28px;
+    border-top: 4px solid #5cb85c;
+    border-right: 4px solid #5cb85c;
+    transform-origin: left top;
+    animation: check-icon 0.8s ease;
+}
+
+@keyframes check-icon {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 1;
+    }
+    20% {
+        height: 0;
+        width: 28px;
+        opacity: 1;
+    }
+    40% {
+        height: 56px;
+        width: 28px;
+        opacity: 1;
+    }
+    100% {
+        height: 56px;
+        width: 28px;
+        opacity: 1;
+    }
+}
+
+input {
+    display: none;
+}
+
+input:checked~label .check-icon {
+    display: block;
+}
+
+input:checked~label {
+    animation: none;
+    border-color: #5cb85c;
+    transition: border 0.5s ease-out;
+}
+
+.jumbotron {
+    background-image: url("../../../assets/undraw_project_team_lc5a.svg");
+    background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
+    // display: block;
+    // margin-left: 30%;
+    // margin-top: 60px;
+    // background: red;
+    //  background: -webkit-linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
+    // 
+    //background-color: #cccccc;
+    background-repeat: no-repeat;
+}
+
+.jumbotron h1 {
+    color: white;
+}
+
+.jumbotron p {
+    color: whitesmoke;
+}
+
+// .card-img {
+//     height: 600px;
+//     width: 100vw;
+//     background: black;
+//     overflow: hidden;
+//     background: #C33764;
+//     //  background-position: left;
+//     //  position: fixed;
+//     /* fallback colour. Make sure this is just one solid colour. */
+//     background: -webkit-linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("../assets/undraw_project_team_lc5a.svg");
+//     background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("../assets/undraw_project_team_lc5a.svg");
+//     /* The least supported option. */
+// }
+img {
+    object-position: left;
+}

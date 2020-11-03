@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Recursos Informaticos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item  " routerLinkActive="active">
+                <a class="nav-link" [routerLink]="[ '/home' ]">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/recursos']">Recursos</a>
+            </li>
+
+
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/about']">Acerca de</a>
+            </li>
+            <!-- <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/login']">Iniciar Sesion</a>
+            </li> -->
+            <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active">Iniciar  Sesion</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/signup" routerLinkActive="active">SignUp</a>
+                </li> -->
+            </ng-container>
+            <ng-template #loggedIn>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/agregarrecursos']">Administracion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer;" (click)="authService.logout()">Cerrar Sesion</a>
+                </li>
+            </ng-template>
+        </ul>
+
+        <br>
+        <form class="form-inline my-2 my-lg-0">
+
+            <!-- <input class="form-control mr-sm-2" type="text" [(ngModel)]="user.email" placeholder="Ingrese busquedad" (keyup.enter)="buscarRecurso()"> -->
+            <input class="form-control mr-sm-2" type="text" [(ngModel)]="user.email" name="first" placeholder="Ingrese busqueda" (keyup.enter)="buscarRecurso()">
+            <button [routerLink]="['/buscar/' + user.email]" class="btn btn-secondary my-2 my-sm-0" type="button">Buscar</button>
+        </form>
+
+    </div>
+</nav>
